@@ -11,8 +11,16 @@ import React = require('react');
 import RN = require('react-native');
 
 import RX = require('../common/Interfaces');
+import Styles from './Styles';
 import Types = require('../common/Types');
 import ViewBase from './ViewBase';
+
+const _styles = {
+    contentContainer: Styles.createViewStyle({
+        flex: 1,
+        alignSelf: 'stretch'
+    })
+};
 
 export class ScrollView extends ViewBase<Types.ScrollViewProps, {}> implements RX.IScrollView {
     private _scrollTop = 0;
@@ -61,6 +69,7 @@ export class ScrollView extends ViewBase<Types.ScrollViewProps, {}> implements R
                 ref={this._setNativeView}
                 style={ this.props.style }
                 onScroll={ scrollCallback }
+                contentContainerStyle={ _styles.contentContainer }
                 automaticallyAdjustContentInsets={ false }
                 showsHorizontalScrollIndicator={ this.props.showsHorizontalScrollIndicator }
                 showsVerticalScrollIndicator={ this.props.showsVerticalScrollIndicator }

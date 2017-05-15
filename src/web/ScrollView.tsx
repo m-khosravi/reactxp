@@ -203,7 +203,7 @@ export class ScrollView extends ViewBase<Types.ScrollViewProps, {}> implements R
     }
 
     private _getContainerStyle(): Types.ScrollViewStyleRuleSet {
-        let styles: any = [{ display: 'block' }];
+        let styles: any = [{ display: 'flex', flex: 1, alignSelf: 'stretch' }];
         let sourceStyles = this._customScrollbarEnabled ? _customStyles : _styles;
 
         styles.push(sourceStyles.defaultStyle);
