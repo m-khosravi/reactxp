@@ -38,7 +38,9 @@ var _isStyleSheetInstalled: boolean = false;
 const _customScrollbarCss = `
     .rxCustomScroll .scrollViewport > * {
         box-sizing: border-box;
-        display: block;
+        display: flex;
+        flex: 1;
+        alignSelf: stretch;
     }
     .rxCustomScroll .rail {
         position: absolute;
